@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{page.data.title}}</title>
+        <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    </head>
+    <body>
+        <header>
+            <a href="/"><img src="/img/thriveLogo.jpg" alt="thrive logo" id="thrive-logo"/></a>
+            <nav>
+                <ol id="main-nav">
+                {%- for navItem in collections.mainNav -%}
+                    {% if page.url == navItem.url %}
+                        <li class="active">{{navItem.data.navTitle}}</li>
+                    {% else %}
+                        <li><a href="{{navItem.url}}">{{navItem.data.navTitle}}</a></li>
+                    {% endif %}
+                {%- endfor -%}
+                </ol>
+            </nav>
+        </header>
+        <main>
+            <section>
+                {{content | safe}}
+            </section>
+        </main>
+        <aside></aside>
+    </body>
+</html>
