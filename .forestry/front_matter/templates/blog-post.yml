@@ -1,4 +1,10 @@
 ---
 label: Blog Post
 hide_body: false
-fields: []
+fields:
+- name: navTitle
+  type: text
+  config:
+    required: false
+  label: Main Navigation Label
+  description: Optional.  If populated, it puts this page on the main nav.
